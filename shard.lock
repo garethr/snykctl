@@ -1,0 +1,18 @@
+version: 2.0
+shards:
+  commander:
+    git: https://github.com/mrrooijen/commander.git
+    version: 0.3.5
+
+  crest:
+    git: https://github.com/mamantoha/crest.git
+    version: 0.26.1
+
+  http-client-digest_auth:
+    git: https://github.com/mamantoha/http-client-digest_auth.git
+    version: 0.4.0
+
+  http_proxy:
+    git: https://github.com/mamantoha/http_proxy.git
+    version: 0.7.1
+

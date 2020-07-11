@@ -1,0 +1,20 @@
+name: snykctl
+version: 0.1.0
+
+authors:
+  - Gareth Rushgrove <garethr@snyk.io>
+
+targets:
+  snykctl:
+    main: src/snykctl.cr
+
+dependencies:
+  commander:
+    github: mrrooijen/commander
+    version: ~> 0.3.5
+  crest:
+    github: mamantoha/crest
+
+crystal: 0.35.1
+
+license: Apache-2.0
