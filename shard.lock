@@ -20,3 +20,11 @@ shards:
     git: https://github.com/mamantoha/http_proxy.git
     version: 0.7.1
 
+  icr:
+    git: https://github.com/crystal-community/icr.git
+    version: 0.7.0+git.commit.7da354f5c0a356aee77e68fc63c87e2ad35da7fb
+
+  readline:
+    git: https://github.com/crystal-lang/crystal-readline.git
+    version: 0.1.0+git.commit.0fb7d186da8e1b157998d98d1c96e99699b791eb
+

@@ -22,4 +22,11 @@ test:
 lint: shard.lock
 	./bin/ameba
 
-.PHONY: build release fmt test lint
+lib/icr/bin/icr: shard.lock
+	make -C lib/icr install
+
+repl: lib/icr/bin/icr
+	./lib/icr/bin/icr
+
+
+.PHONY: build release fmt test lint repl
