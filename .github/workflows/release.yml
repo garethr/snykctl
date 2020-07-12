@@ -12,18 +12,19 @@ jobs:
 
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [ubuntu-latest, macos-latest]
         include:
           - os: ubuntu-latest
             artifact_name: snykctl
-            asset_name: snykctl_${{ github.event.release.tag_name }}_linux-amd64
+            asset_name: snykctl_linux-amd64
+          - os: macos-latest
+            artifact_name: snykctl
+            asset_name: snykctl_darwin-amd64
       fail-fast: false
-
-    container:
-      image: crystallang/crystal:0.35.1
 
     steps:
       - uses: actions/checkout@v2
+      - uses: MeilCli/setup-crystal-action@v3.0.0
       - name: Install dependencies
         run: shards install
       - name: Compile release
