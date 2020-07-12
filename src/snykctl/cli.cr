@@ -13,7 +13,7 @@ module SnykCtl::CLI
 
   def config
     Commander::Command.new do |cmd|
-      cmd.use = "snykls"
+      cmd.use = "snykctl"
       cmd.long = "Command line tool for interacting with the Snyk API"
 
       cmd.run do |_, _|

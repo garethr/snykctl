@@ -25,10 +25,10 @@ enabled for all Snyk customers.
 
 ```console
 $ snykctl
-snykls - Command line tool for interacting with the Snyk API
+snykctl - Command line tool for interacting with the Snyk API
 
 Usage:
-  snykls [command] [arguments]
+  snykctl [command] [arguments]
 
 Commands:
   api [path ...]  Make Snyk API requests and print raw responses
