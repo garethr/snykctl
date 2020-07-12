@@ -19,4 +19,7 @@ fmt:
 test:
 	crystal spec
 
-.PHONY: build release fmt test
+lint: shard.lock
+	./bin/ameba
+
+.PHONY: build release fmt test lint
