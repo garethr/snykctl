@@ -7,14 +7,14 @@ A command line tool for interacting with the [Snyk API](https://snyk.docs.apiary
 Precompiled executables are available Linux and macOS environments. These are available from [Releases](https://github.com/garethr/snykctl/releases). You can grab those quickly with `wget` like so for Linux:
 
 ```console
-wget -o snykctl https://github.com/garethr/snykctl/releases/download/v0.1.0/snykctl_v0.1.0_linux-amd64
+wget -o snykctl https://github.com/garethr/snykctl/releases/download/v0.2.0/snykctl_v0.2.0_linux-amd64
 chmod +x snykctl
 ```
 
 And for macOS:
 
 ```console
-wget -o snykctl https://github.com/garethr/snykctl/releases/download/v0.1.0/snykctl_v0.1.0_darwin-amd64
+wget -o snykctl https://github.com/garethr/snykctl/releases/download/v0.2.0/snykctl_v0.2.0_darwin-amd64
 chmod +x snykctl
 ```
 
