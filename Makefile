@@ -16,6 +16,7 @@ shard.lock: shard.yml
 fmt:
 	crystal tool format
 
+spec: test
 test:
 	crystal spec
 
