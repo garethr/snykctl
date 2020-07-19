@@ -4,8 +4,15 @@ default: build
 bin:
 	mkdir bin
 
-build: bin shard.lock
+/usr/local/bin/snykctl: bin/snykctl
+	cp bin/snykctl /usr/local/bin/snykctl
+
+install: /usr/local/bin/snykctl
+
+bin/snykctl: bin shard.lock
 	crystal build src/compile.cr -o bin/snykctl
+
+build: bin/snykctl
 
 release:
 	crystal build --release src/compile.cr -o bin/snykctl
@@ -29,5 +36,8 @@ lib/icr/bin/icr: shard.lock
 repl: lib/icr/bin/icr
 	./lib/icr/bin/icr
 
+clean:
+	rm -fr bin
 
-.PHONY: build release fmt test lint repl
+
+.PHONY: install build release fmt test lint repl clean
