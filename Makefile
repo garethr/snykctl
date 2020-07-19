@@ -1,5 +1,5 @@
 
-default: build
+default: clean build
 
 bin:
 	mkdir bin

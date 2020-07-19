@@ -1,17 +1,10 @@
 require "commander"
 require "json"
 require "../snyk"
+require "./api"
 
 module SnykCtl::CLI
   extend self
-
-  def client(debug : Bool = false)
-    token = ENV["SNYK_TOKEN"]
-    Snyk::Client.new(token, logging: debug)
-  rescue KeyError
-    puts "Missing SNYK_TOKEN environment variable"
-    exit 2
-  end
 
   def config
     Commander::Command.new do |cmd|
@@ -27,26 +20,12 @@ module SnykCtl::CLI
         api.short = "Make Snyk API requests and print raw responses"
         api.long = cmd.short
         api.run do |options, arguments|
-          path = arguments.join("/")
-          data_or_file = options.string["data"]
-          data = File.file?(data_or_file) ? File.read(data_or_file) : data_or_file
           begin
-            c = client(options.bool["debug"])
-            response = case options.string["method"].downcase
-                       when "get"
-                         c.get(path)
-                       when "post"
-                         c.post(path, data)
-                       when "put"
-                         c.put(path, data)
-                       when "delete"
-                         c.delete(path)
-                       else
-                         puts "Method must be GET, POST, PUT or DELETE"
-                         exit 2
-                       end
-            puts response.body
+            puts SnykCtl::API.run(options, arguments)
           rescue ex : Snyk::APIError
+            puts ex.message
+            exit 1
+          rescue ex : SnykCtl::API::Error
             puts ex.message
             exit 2
           end
