@@ -60,7 +60,7 @@ $ snykctl api orgs | jq
 The [List members](https://snyk.docs.apiary.io/#reference/organizations/members-in-organization/list-members) API:
 
 ```console
-$ snykctl api org e1fde430-36f8-43a5-bd6b-7be6ss99b42b membersxx
+$ snykctl api org e1fde430-36f8-43a5-bd6b-7be6ss99b42b members
 [
   {
     "id": "e5e77afc-4ffb-4adc-a450-efd634sds0a3",
